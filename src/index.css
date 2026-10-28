@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Vazirmatn', 'Plus Jakarta Sans', system-ui, sans-serif;
+    background-color: #090d16;
+    color: #f1f5f9;
+  }
+}
+
+/* Android TV D-Pad Focus Ring */
+.tv-focusable {
+  outline: none;
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tv-focusable:focus-visible,
+.tv-focusable[data-focused="true"] {
+  transform: scale(1.04);
+  box-shadow: 0 0 0 2px #f59e0b, 0 10px 25px -5px rgba(245, 158, 11, 0.3);
+  z-index: 20;
+}
+
+/* Hide scrollbars for TV leanback look */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
